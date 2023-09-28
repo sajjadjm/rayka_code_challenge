@@ -1,11 +1,28 @@
 # Rayka code challenge
 
-This is a programming challenge to build a simple API and deploy it on the AWS platform.
+This is a programming challenge to build a simple API and deploy it on the AWS cloud provider.
 
 >You can test the API using the below URL
 >>[API Base URL](https://uq3ivlxsij.execute-api.eu-north-1.amazonaws.com/dev)
 
-##Dependencies
+## Endpoints
+
+|  |  |
+| --- | ----------- |
+| Title | Create a new device |
+| Route | /api/devices/ |
+| Method | POST |
+| Body | <pre><code>{</code><br><code>    "id": string,</code><br><code>    "deviceModel": string,</code><br><code>    "name": string,</code><br><code>    "serial": string,</code><br><code>    "note": string,</code><br><code>}</code></pre> |
+
+|  |  |
+| --- | ----------- |
+| Title | Retrieve a device |
+| Route | /api/devices/{device-id} |
+| Method | GET |
+| Body | {} |
+
+
+## Dependencies
 1. python 3.11
 2. node 20.5
 3. serverless 3.35
@@ -38,7 +55,15 @@ You can install the project dependencies by the below command:
 pip install -r requirements.txt
 ```
 
-**4. Start the server**
+**4. Test the application**
+
+You can test the application by running the following command:
+
+```console
+python manage.py test
+```
+
+**5. Start the server**
 
 Start the server with Django `runserver` with the following command:
 
